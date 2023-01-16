@@ -3,34 +3,34 @@ import { User } from '../models/user.js';
 
 var router = express.Router();
 
-router.get('/users', async(req, res ) => {
-  const data = await User.find();
-  return res.status(200).json(data);
+router.get('/', async(req, res ) => {
+  const users = await User.find();
+  return res.status(200).json(users);
 });
 
-router.get('/users/:id', async(req, res ) => {
+router.get('/:id', async(req, res ) => {
   const { id } = req.params;
-  const data = await User.findById(id);
-  return res.status(200).json(data);
+  const user = await User.findById(id);
+  return res.status(200).json(user);
 });
 
 router.post('/', async(req, res ) => {
-  const newData = req.body;
-  const insertedData = await User.create(newData);
-  return res.status(200).json(insertedData);
+  const newUser = req.body;
+  const insertedUser = await User.create(newUser);
+  return res.status(200).json(insertedUser);
 });
 
 router.put('/:id', async(req, res) => {
   const { id } = req.params;
-  await User.updateOne({ id }, req.body);
-  const updatedData = await User.findById(id);
-  return res.status(200).json(updatedData);
+  let data = await User.updateOne({_id: id}, req.body);
+  const updatedUser = await User.findById(id);
+  return res.status(200).json(updatedUser);
 })
 
-router.delete("/users/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   const { id } = req.params;
-  const deletedData = await User.findByIdAndDelete(id);
-  return res.status(200).json(deletedData);
+  const deletedUser = await User.findByIdAndDelete(id);
+  return res.status(200).json(deletedUser);
 });
 
 export { router };
