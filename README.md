@@ -27,3 +27,14 @@ MONGODB_DATABASE_NAME = "test"
 Run npm start to start the server
 
 `npm start`
+
+## Endpoints
+
+```
+GET     http://<machine>:<port>/data
+GET     http://<machine>:<port>/data/:id
+POST    http://<machine>:<port>/data
+PUT     http://<machine>:<port>/data/:id
+DELETE  http://<machine>:<port>/data/:id
+```
+

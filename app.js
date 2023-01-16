@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import {router} from './routes/routes.js';
+import {router} from './routes/routes-data.js';
 
 dotenv.config();
 const app = express();
@@ -9,7 +9,7 @@ const app = express();
 app.set( 'port', process.env.APP_PORT || 3000);
 app.use(express.json());
 
-app.use( '/users', router );
+app.use( '/data', router );
 
 // In case no route matches
 app.use(( req,res ) => {
