@@ -1,10 +1,10 @@
 # nodejs-mongoose-template
 
-Starter template to run a quick test on API endpoints using mongoose to CRUD MongoDB database documents.
+Spin up basic CRUD based API endpoints using mongoose to manage MongoDB database documents.
 
 I use this template primarily to check basic mongoose function, schema, queries.
 
-You can also use it to get you started.
+Feel free to use it and to get you started.
 
 ## Setup
 
